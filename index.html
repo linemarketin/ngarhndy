@@ -7,16 +7,16 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="30Y63clHeVVanQVM_TebeceVXTWlgfLOjEQD5JLqark" />
     
-    <!-- Google tag (gtag.js) - Google Ads Tracking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11213387429"></script>
+    <!-- Google tag (gtag.js) - NEW Google Ads Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18315879901"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-11213387429');
+      gtag('config', 'AW-18315879901');
     </script>
 
-    <!-- Event snippet for نقرة صادرة إلى الخارج conversion page (الأول) -->
+    <!-- Event snippet for نقرة صادرة إلى الخارج conversion page -->
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -25,40 +25,14 @@
         }
       };
       gtag('event', 'conversion', {
-          'send_to': 'AW-11213387429/gOwNCIn3vb4cEKXt-uIp',
+          'send_to': 'AW-18315879901/-u4TCOG1jc8cEN3L2J1E',
           'event_callback': callback
       });
       return false;
     }
     </script>
 
-    <!-- Event snippet for نقرة صادرة إلى الخارج (1) conversion page (الثاني - المضاف حديثاً) -->
-    <script>
-    function gtag_report_conversion_2(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-11213387429/p_Y-CKKSu80cEKXt-uIp',
-          'event_callback': callback
-      });
-      return false;
-    }
-    </script>
-
-    <!-- Clixtell Tracking Code -->
-    <script type='text/javascript'> 
-    var script=document.createElement('script'); 
-    var prefix=document.location.protocol; 
-    script.async=true;script.type='text/javascript'; 
-    var target=prefix + '//scripts.clixtell.com/track.js'; 
-    script.src=target;var elem=document.head; 
-    elem.appendChild(script); 
-    </script>
-
-    <!-- Call and WhatsApp tracking functions with conversion support -->
+    <!-- Call and WhatsApp tracking functions with conversion support (using new gtag) -->
     <script>
     function makePhoneCall(phoneNumber) {
       var cleanNumber = String(phoneNumber).replace(/[\s\-]/g, '');
@@ -71,13 +45,9 @@
       }
       var telUrl = 'tel:' + cleanNumber;
       
-      // استدعاء دالة التتبع الأولى
+      // استدعاء دالة التتبع الجديدة
       if (typeof gtag_report_conversion === 'function') {
         gtag_report_conversion(telUrl);
-      }
-      // استدعاء دالة التتبع الثانية (المضافة حديثاً)
-      if (typeof gtag_report_conversion_2 === 'function') {
-        gtag_report_conversion_2(telUrl);
       }
       
       setTimeout(function() {
@@ -88,13 +58,9 @@
     }
 
     function trackWhatsAppClick(url) {
-      // استدعاء دالة التتبع الأولى
+      // استدعاء دالة التتبع الجديدة
       if (typeof gtag_report_conversion === 'function') {
         gtag_report_conversion(url);
-      }
-      // استدعاء دالة التتبع الثانية (المضافة حديثاً)
-      if (typeof gtag_report_conversion_2 === 'function') {
-        gtag_report_conversion_2(url);
       }
       setTimeout(function() {
         window.open(url, '_blank');
@@ -1006,16 +972,12 @@
     </div>
 
     <script>
-        // Handle contact form submission with conversion tracking
+        // Handle contact form submission with conversion tracking (using new gtag)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // استدعاء دالة التتبع الأولى
+            // استدعاء دالة التتبع الجديدة
             if (typeof gtag_report_conversion === 'function') {
                 gtag_report_conversion();
-            }
-            // استدعاء دالة التتبع الثانية (المضافة حديثاً)
-            if (typeof gtag_report_conversion_2 === 'function') {
-                gtag_report_conversion_2();
             }
             alert('شكراً لتواصلكم مع جوهرة الخليج للنجارة والتركيب! سيتم الاتصال بكم فوراً لتأكيد موعد الخدمة والكشف المجاني.');
             this.reset();
