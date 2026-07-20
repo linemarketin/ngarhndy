@@ -7,7 +7,7 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="30Y63clHeVVanQVM_TebeceVXTWlgfLOjEQD5JLqark" />
     
-    <!-- Google tag (gtag.js) - NEW Google Ads Tracking -->
+    <!-- Google tag (gtag.js) - OLD Google Ads Tracking (Keep) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18315879901"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,9 +16,9 @@
       gtag('config', 'AW-18315879901');
     </script>
 
-    <!-- Event snippet for نقرة صادرة إلى الخارج conversion page -->
+    <!-- Event snippet for نقرة صادرة إلى الخارج conversion page (OLD) -->
     <script>
-    function gtag_report_conversion(url) {
+    function gtag_report_conversion_old(url) {
       var callback = function () {
         if (typeof(url) != 'undefined') {
           window.location = url;
@@ -32,7 +32,46 @@
     }
     </script>
 
-    <!-- Call and WhatsApp tracking functions with conversion support (using new gtag) -->
+    <!-- Google tag (gtag.js) - NEW Google Ads Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18337800308"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18337800308');
+    </script>
+
+    <!-- Event snippet for نقرة صادرة إلى الخارج conversion page (NEW) -->
+    <script>
+    function gtag_report_conversion_new(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18337800308/TObqCJ6dwdMcEPTAkqhE',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+    <!-- Combined tracking function -->
+    <script>
+    function gtag_report_conversion(url) {
+      // Call both conversion functions
+      if (typeof gtag_report_conversion_old === 'function') {
+        gtag_report_conversion_old(url);
+      }
+      if (typeof gtag_report_conversion_new === 'function') {
+        gtag_report_conversion_new(url);
+      }
+      return false;
+    }
+    </script>
+
+    <!-- Call and WhatsApp tracking functions with conversion support -->
     <script>
     function makePhoneCall(phoneNumber) {
       var cleanNumber = String(phoneNumber).replace(/[\s\-]/g, '');
@@ -72,7 +111,7 @@
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "نجار باكستاني - ونجار هندي  للنجارة والتركيب",
+        "name": "نجار باكستاني - جوهرة الخليج للنجارة والتركيب",
         "description": "افضل نجار باكستاني بالكويت - نجار خشب - نجار ايكيا - تركيب كبتات - تركيب ابواب - فني باكستاني - شراشيب - نجار السالمية - خدمة 24 ساعة",
         "telephone": "+96566371841",
         "areaServed": "Kuwait",
@@ -786,7 +825,7 @@
     </div>
 
     <nav class="navbar">
-        <div class="logo">🪚 نجار باكستاني - ونجار هندي  🪚</div>
+        <div class="logo">🪚 نجار باكستاني - جوهرة الخليج 🪚</div>
         <div class="phone-display" onclick="makePhoneCall('66371841')">
             <i class="fas fa-phone-alt"></i> 66371841
         </div>
@@ -859,7 +898,7 @@
     </section>
 
     <section class="why-us">
-        <h2 class="section-title">لماذا نجار باكستاني هي الأفضل نجار في الكويت؟</h2>
+        <h2 class="section-title">لماذا جوهرة الخليج هي أفضل نجار في الكويت؟</h2>
         <div class="features">
             <div class="feature-item"><i class="fas fa-user-cog feature-icon"></i><h3>نجار باكستاني محترف</h3><p>خبرة سنوات في النجارة والتركيب - دقة وإتقان</p></div>
             <div class="feature-item"><i class="fas fa-clock feature-icon"></i><h3>خدمة 24 ساعة</h3><p>فريق جاهز للاستجابة الفورية في أي وقت</p></div>
@@ -961,20 +1000,20 @@
     </div>
 
     <div class="simple-footer">
-        <p>🪚  للنجارة والتركيب - افضل نجار باكستاني بالكويت - نجار خشب - نجار ايكيا - تركيب كبتات - تركيب ابواب - شراشيب - فني باكستاني - خدمة 24 ساعة 🪚</p>
+        <p>🪚 جوهرة الخليج للنجارة والتركيب - افضل نجار باكستاني بالكويت - نجار خشب - نجار ايكيا - تركيب كبتات - تركيب ابواب - شراشيب - فني باكستاني - خدمة 24 ساعة 🪚</p>
         <div class="footer-phone" onclick="makePhoneCall('66371841')"><i class="fas fa-phone"></i> 66371841</div>
         <p>نجار محترف - ضمان الجودة - أسعار مناسبة - تغطية جميع مناطق الكويت</p>
-        <p>جميع الحقوق محفوظة © 2026 |  - أفضل نجار في الكويت - رقم نجار الكويت 66371841</p>
+        <p>جميع الحقوق محفوظة © 2026 | جوهرة الخليج - أفضل نجار في الكويت - رقم نجار الكويت 66371841</p>
     </div>
 
     <script>
-        // Handle contact form submission with conversion tracking (using new gtag)
+        // Handle contact form submission with conversion tracking (calls both old and new)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             if (typeof gtag_report_conversion === 'function') {
                 gtag_report_conversion();
             }
-            alert('شكراً لتواصلكم مع نجار باكستاني للنجارة والتركيب! سيتم الاتصال بكم فوراً لتأكيد موعد الخدمة والكشف المجاني.');
+            alert('شكراً لتواصلكم مع جوهرة الخليج للنجارة والتركيب! سيتم الاتصال بكم فوراً لتأكيد موعد الخدمة والكشف المجاني.');
             this.reset();
         });
     </script>
